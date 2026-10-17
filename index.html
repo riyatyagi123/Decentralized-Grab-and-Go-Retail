@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fbf9f5" />
+  <meta name="description" content="Fresh market produce, pantry staples and local favourites, delivered with care." />
+  <title>Verdant — good food, closer to home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar page-width">
+      <a class="brand" href="#home" aria-label="Verdant home"><span class="brand-mark">↗</span><span>Verdant<span class="brand-dot">.</span></span></a>
+      <button class="category-menu" id="categoryMenu" aria-label="Shop by category">Shop by category <span>⌄</span></button>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search the market..." autocomplete="off" /></label>
+      <button class="icon-button header-heart" id="showFavourites" aria-label="Show favourites">♡</button>
+      <button class="basket-button" id="openBasket"><span>♧</span><b>Basket</b><strong id="headerTotal">₹0</strong><i id="headerCount">0</i></button>
+    </div>
+    <nav class="nav-row page-width" aria-label="Shop categories">
+      <a href="#shop" data-nav="Vegetables">Vegetables</a><a href="#shop" data-nav="Fruits">Fruits</a><a href="#shop" data-nav="Bakery">Bakery</a><a href="#shop" data-nav="Dairy & Eggs">Dairy & Eggs</a><a href="#shop" data-nav="Beverages">Beverages</a><a href="#shop" data-nav="Pantry">Pantry</a><a class="deal-link" href="#shop" data-nav="Deals">Weekly market picks <span>✧</span></a>
+    </nav>
+  </header>
+  <main id="home">
+    <section class="hero page-width">
+      <div class="hero-main">
+        <div class="hero-photo"></div><div class="hero-shade"></div>
+        <div class="hero-copy"><span class="issue-pill">FRESH FROM THE MARKET · NO. 08</span><h1>Good things<br />grow <em>closer.</em></h1><p>Seasonal produce, fresh-baked bread and pantry favourites from people who care about every ingredient.</p><div class="hero-actions"><a class="primary-cta" href="#shop">Shop the market <span>→</span></a><a class="secondary-cta" href="#shop">Meet your growers</a></div></div>
+        <div class="hero-caption">Picked fresh. Packed thoughtfully.</div>
+      </div>
+      <div class="hero-side"><article class="side-card delivery-card"><span class="eyebrow">A GOOD DAY, DELIVERED</span><h2>Good food<br />knows the way<br />home.</h2><p>Choose a two-hour window that works for you.</p><span class="delivery-art" aria-hidden="true">♧</span></article><article class="side-card brunch-card"><span class="eyebrow">A LITTLE INSPIRATION</span><h2>Sunday brunch,<br />sorted.</h2><a href="#shop" data-nav="Bakery">Explore the bakery <span>→</span></a><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=420&q=85" alt="Fresh coffee and breakfast on a sunny table" /></article></div>
+    </section>
+    <section class="shop page-width" id="shop">
+      <div class="section-heading"><div><span class="eyebrow">THE GOOD STUFF</span><h2>Market favourites</h2><p>Real food, from good growers. Picked for this week.</p></div><a href="#products" id="clearFilters">View all products <span>→</span></a></div>
+      <div class="category-chips" id="categoryChips" aria-label="Filter by category"></div>
+      <div class="filter-line"><span>FILTER BY</span><div id="filterChips"></div><div class="sort-wrap"><label for="sortSelect">Sort</label><select id="sortSelect"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option></select></div></div>
+      <div class="result-line"><span id="resultCount"></span><span>Indicative local prices · refreshed seasonally</span></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+    <section class="promise page-width"><span>✳</span><div><b>Good food, good neighbours.</b><p>Thoughtfully sourced from growers and makers around India.</p></div><a href="#shop">Get to know our market <span>→</span></a></section>
+  </main>
+  <footer class="footer page-width"><a class="brand" href="#home"><span class="brand-mark">↗</span><span>Verdant<span class="brand-dot">.</span></span></a><span>Fresh finds, delivered with care.</span><span>© 2026 Verdant Market</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Your basket" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow">YOUR MARKET HAUL</span><h2>Your basket <span id="drawerCount">(0)</span></h2></div><button class="close-drawer" id="closeBasket" aria-label="Close basket">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-footer"><div class="subtotal"><span>Subtotal</span><b id="subtotal">₹0</b></div><p>Delivery and any applicable fees are shown at checkout.</p><button id="checkoutButton">Continue to checkout <span>→</span></button></div></aside>
+  <script src="app.js"></script>
+</body>
+</html>
